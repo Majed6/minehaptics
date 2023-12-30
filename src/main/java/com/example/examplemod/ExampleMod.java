@@ -26,6 +26,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
@@ -64,6 +65,7 @@ public class ExampleMod
     public ExampleMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MyForgeEventHandler myForgeEventHandler = new MyForgeEventHandler();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -77,6 +79,7 @@ public class ExampleMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(myForgeEventHandler);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
