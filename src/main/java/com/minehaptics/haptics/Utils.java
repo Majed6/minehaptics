@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.minehaptics.haptics;
 
 
 import com.google.common.base.Charsets;

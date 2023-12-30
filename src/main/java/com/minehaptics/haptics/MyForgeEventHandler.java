@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.minehaptics.haptics;
 
 
 import com.bhaptics.haptic.HapticPlayerImpl;
@@ -51,8 +51,8 @@ public class MyForgeEventHandler {
 
     public MyForgeEventHandler() {
         // create a haptic player
-        String appId = "com.bhaptics.sample";
-        String appName = "Sample Java App";
+        String appId = "com.minehaptics.haptics";
+        String appName = "MineHaptics";
         this.hapticPlayer =
                 new HapticPlayerImpl(appId, appName, true);
     }
